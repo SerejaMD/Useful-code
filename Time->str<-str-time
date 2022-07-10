@@ -1,0 +1,20 @@
+##################### 1
+
+#Мат. работа с датой и времением.
+
+rec = datetime.today().strftime("%Y.%d.%m.%H.%M.%S")
+txt = open('record.txt', 'w')
+txt.write(rec)
+txt.close()
+x = open('record.txt', 'r')
+x = x.read() 
+# strftime - Преобразовывает дату и время в строку
+# strptime - Преобразует строку дату и времени в дату и время
+two = datetime.strptime(x,'%Y.%d.%m.%H.%M.%S')
+one = datetime.today().replace(microsecond=0)
+txt.close()
+itog = one - two
+# Код помогает вычесть из одной даты и времени другое
+#Не использует timedelta, так как она не еподдерживает год и месяц
+
+##########2
